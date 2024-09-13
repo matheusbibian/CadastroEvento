@@ -1,5 +1,5 @@
 // Inicializar variáveis
-let dataEvento = new Date("2024-12-15"); // Exemplo de data do evento
+let dataEvento = new Date("2024-09-21"); // Exemplo de data do evento
 let idadeParticipante = 20; // Exemplo de idade do participante
 let qtdParticipantes = 0; // Inicialmente, nenhum participante cadastrado
 const limiteParticipantes = 100; // Limite de participantes
