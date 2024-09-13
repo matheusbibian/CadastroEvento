@@ -1,0 +1,58 @@
+// Inicializar variáveis
+let dataEvento = new Date("2024-12-15"); // Exemplo de data do evento
+let idadeParticipante = 20; // Exemplo de idade do participante
+let qtdParticipantes = 0; // Inicialmente, nenhum participante cadastrado
+const limiteParticipantes = 100; // Limite de participantes
+
+// Função para verificar se a data do evento é válida
+function verificarDataEvento(dataEvento) {
+    let dataAtual = new Date();
+    if (dataEvento > dataAtual) {
+        return true; // Data válida
+    } else {
+        console.log("Data do evento inválida");
+        return false; // Data inválida
+    }
+}
+
+// Função para verificar se o participante tem 18 anos ou mais
+function verificarIdade(idadeParticipante) {
+    if (idadeParticipante >= 18) {
+        return true; // Idade válida
+    } else {
+        console.log("Cadastro não permitido para menores de 18 anos");
+        return false; // Idade inválida
+    }
+}
+
+// Função para verificar se há vagas disponíveis
+function verificarVagas(qtdParticipantes) {
+    if (qtdParticipantes < limiteParticipantes) {
+        return true; // Ainda há vagas
+    } else {
+        console.log("Limite de participantes excedido");
+        return false; // Não há mais vagas
+    }
+}
+
+// Função para cadastrar participante
+function cadastrarParticipante() {
+    if (verificarDataEvento(dataEvento) && verificarIdade(idadeParticipante) && verificarVagas(qtdParticipantes)) {
+        qtdParticipantes++; // Atualiza o número de participantes
+        console.log("Participante cadastrado com sucesso!");
+        console.log("Número de participantes:", qtdParticipantes);
+        exibirListaParticipantes(); // Exibe a lista de participantes após o cadastro
+    }
+}
+
+// Função para exibir lista de participantes e palestrantes (exemplo fictício)
+function exibirListaParticipantes() {
+    const participantes = ["Participante 1", "Participante 2"]; // Exemplo de lista de participantes
+    const palestrantes = ["Palestrante 1", "Palestrante 2"]; // Exemplo de lista de palestrantes
+
+    console.log("Lista de Participantes:", participantes);
+    console.log("Lista de Palestrantes:", palestrantes);
+}
+
+// Iniciar o processo de cadastro
+cadastrarParticipante();
